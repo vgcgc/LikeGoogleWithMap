@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+        .space {
+            margin: 0;
+            text-align: center;
+            font-size: .82em;
+            margin-right: 14px;
+            color: #464646;
+        }
+        .space:hover{
+            text-decoration: underline;
+        }
+
+        #drawBox {
+            background-color: #288CD2;
+            padding: 5px 10px;
+            color: white;
+            border-radius: 2px;
+            border: #288CD2 solid 1px;
+            font-weight: bold;
+            border: 0;
+            outline: 0;
+        }
+        #drawBox:hover{
+            background-color: white;
+            color: #288CD2;
+            border: #288CD2 solid 1px;
+            border-radius: 2px;
+            font-weight: bold;
+            padding: 4px 9px;
+        }
+
+        .out {
+            width: 100%;
+            text-align: center;
+            padding-top: -100px;
+        }
+
+        .in {
+            display: inline-block;
+        }
+
+        .search {
+            margin-left: 10px;
+            margin-top: -10px;
+            border: none;
+            width: 300px;
+            height: 28px;
+            font-size: 1.2em;
+        }
+        input:focus {
+            outline: none;
+        }
+        #tableSet{
+            position: relative;
+            right: -8px;
+            display: inline;
+        }
+        .overKey{
+            background-color: cadetblue;
+        }
+        .buttonSet{
+            text-align: center;
+            position: relative;
+            top: 120px;
+            border: none;
+            outline: 0;
+            font-size: 0.9em;
+            color: #8c8c8c;
+            padding: 10px 25px;
+            border-radius: 3px;
+            background-color: #F2F2F2;
+            
+        }
+        .buttonSet:hover{
+            box-shadow: -1.3px -1.3px 2px #b4b4b4,
+                        1.3px 1.3px 2px #b4b4b4 ;
+            color: black;
+        }
+        .in > fieldset:hover{
+            box-shadow: 1px 1px 7px #ddd;
+        }
+        #footer{
+            position: fixed; 
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 90px;
+            background-color: #EDEDED;
+            font-size: .95em;
+            border-top: 1px solid #C9C9C9;
+            display:table-cell;
+            vertical-align:middle;
+        }
+        #footer > table{
+            text-align: center;
+            border-top: 1px solid #C9C9C9;
+        }
+        .fclass{
+            color: #8c8c8c;
+            border: gray;
+        }
+        #settings{
+            position: fixed;
+            right: 10px;
+            bottom: 100px;
+            width: 280px;
+            height: 290px;
+            font-size: .95em;
+            padding-left: 25px;
+            padding-top: 13px;
+            padding-bottom: 13px;
+            border: 1px solid #C9C9C9;
+            box-shadow: 1.5px 1.5px 7px #ddd;
+            color: gray;
+        }
+        .tdhover:hover{
+            text-decoration: underline;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div style="line-height: 0px; text-align: right;">
+        <span class='space'>Gmail</span>
+        <span class='space'>이미지</span>
+        <img id = 'pichover' src="/icon/menu.png" style="margin-right: 18px; margin-top: 8px;opacity: 0.4;" width="17" height="17" />
+        <button class="space" id="drawBox">로그인</button>
+    </div>
+    <div style="text-align: center;position: relative;top: 90px;">
+        <img src="/icon/google.png" width="270px" />
+    </div>
+    <div style="position: relative;top: 100px;" class="out">
+        <div class="in">
+            <fieldset style="border-radius: 30px;border:#dcdcdc solid 1px;height: 28px;width: 455px;">
+                <div style="text-align: left;margin-top: 0px;margin-left: 3px;">
+                    <img src="/icon/search.png" style="width: 14px;opacity: 0.5;position: relative;top: -7px;" />
+                    <input class="search" type="text" id="srcText" style="position: relative;top: -7px;"/>
+                    <table id = 'tableSet'>
+                        <td style="width: 30px;"><img id='showHide' src="/icon/close.png" style="width: 15px;opacity: 0.4;padding-top: 5px;"></td>
+                        <td style="width: 38px;height: 25px;"><img id = 'keyBoard' src="/icon/keyboard.png" style="opacity: 0.5;width: 23px;"/></td>
+                        <td style="width: 25px;"><img src="/icon/microphone.png" style="width: 23px; "/></td>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div  style="text-align: center;margin-top: 7px;">
+        <button class = 'buttonSet' id = 'buttonClick' style="padding: 10px 18px;">Google 검색</button>
+        <button class = 'buttonSet' style="padding: 11px 20px;font-size: .95em;" type="button" onclick="location.href='//www.google.com/doodles/'">I'm Feeling Lucky</button>
+    </div>
+    <div>
+        <table id='settings'>
+            <tr><td class = 'tdhover' style="height: 40px;">검색 설정</td></tr>
+            <tr><td class = 'tdhover' style="height: 40px;">고급검색</td></tr>
+            <tr><td class = 'tdhover' style="height: 40px;">Google 검색에 표시되는 데이터</td></tr>
+            <tr><td class = 'tdhover' style="height: 40px;">검색 활동</td></tr>
+            <tr><td class = 'tdhover' style="height: 40px;">검색 도움말</td></tr>
+            <tr><td class = 'tdhover' style="height: 40px;">의견 보내기</td></tr>
+        </table>
+    </div>
+    <div id = 'footer'>
+        <p class ='fclass' style="margin: 11px;">&nbsp&nbsp대한민국</p>
+        <table class ='fclass' style="width: 100%;padding-top: 8px;">
+            <td style="width: 65px;"><a type = 'text/css' href="https://ads.google.com/intl/ko_kr/home/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1">광고</a></td>
+            <td style="width: 80px;"><a type = 'text/css' href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1#?modal_active=none">비즈니스</a></td>
+            <td style="width: 130px;"><a type = 'text/css' href="https://about.google/?utm_source=google-KR&utm_medium=referral&utm_campaign=hp-footer&fg=1">Google 정보</a></td>
+            <td style="width: 110px;"><a type = 'text/css' href="https://www.google.com/search/howsearchworks/?fg=1">검색의 원리</a></td>
+            <td style="width: 1200px;"></td>
+            <td style="width: 130px;"><a type = 'text/css' href="https://policies.google.com/privacy?hl=ko&fg=1">개인정보처리방침</a></td>
+            <td style="width: 65px;"><a type = 'text/css' href="https://policies.google.com/terms?hl=ko&fg=1">약관</a></td>
+            <td id = 'setting' style="width: 65px;">설정</td>
+            <style type="text/css">
+                a:link { color: #8c8c8c; text-decoration: none;}
+                a:visited { color: #8c8c8c; text-decoration: none;}
+                a:hover { color: #8c8c8c; text-decoration: overline underline;}
+            </style>
+        </table>
+
+
+
+    </div>
+
+    <script src = "js\jquery-3.5.1.min.js"></script>
+    </script>
+    <script>
+        document.getElementById("showHide").style.display = 'none';
+        document.getElementById("settings").style.display = 'none';
+        //검색 지우기 창 띄우기
+        function show() {
+            document.getElementById("showHide").style.display = 'block';
+            //console.log(typeof searchCheck.value.length);
+            if(searchCheck.value==0)
+                document.getElementById("showHide").style.display = 'none';
+        }
+        var searchCheck = document.getElementById('srcText');
+        searchCheck.addEventListener('keyup', show, false);
+
+        //검색 지우기 클릭시 텍스트 제거
+        var delText = document.getElementById('showHide');
+        delText.addEventListener('click',fdelText,false);
+        function fdelText(){
+            document.getElementById('srcText').value = "";
+            document.getElementById("showHide").style.display = 'none';
+        }
+        
+        //설정 클릭 시 이벤트
+        function showSettings(){
+            if(checkShow==false){
+                document.getElementById('settings').style.display='block';
+                checkShow = true;
+            }
+            else if(checkShow==true){
+                document.getElementById('settings').style.display='none';
+                checkShow = false;
+            }
+        }
+        var settingVar = document.getElementById('setting');
+        var checkShow = false;
+        settingVar.addEventListener('click',showSettings,false);
+
+        //지도 url 이동
+        var connectButton = document.getElementById('buttonClick');
+        connectButton.addEventListener('click',getMap,false);
+
+        function getMap(){
+            if(searchCheck.value.indexOf('지도')!=-1){
+                return location.href="https://allstarmap.netlify.app/kakaomap.html";
+            }
+            else if(searchCheck.value.indexOf('전별')!=-1||searchCheck.value.indexOf('★')!=-1){
+                return location.href='allStarPage.html';
+            }
+            else if(searchCheck.value.index)
+            alert('내용이 없습니다.');
+            document.getElementById('srcText').value = "";
+            document.getElementById("showHide").style.display = 'none';
+        }
+
+        var moveLog = document.getElementById('drawBox');
+        moveLog.addEventListener('click',moveLogEvent,false);
+
+        function moveLogEvent(){
+            location.href='login.html';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login.html</title>
+    <style>
+        #field{
+            position: absolute;
+            left: 37%;
+            top: 16%;
+			margin: 0 auto;
+			text-align: center;
+            width: 450px;
+            height: 600px;
+            border: #C9C9C9 solid 1px;
+            border-radius: 10px;
+        }
+        #textBox{
+            border: #C9C9C9 solid 1px;
+            border-radius: 5px;
+            width: 380px;
+            height: 50px;
+            font-size: 1.1em;
+            text-indent: 15px;
+            color: gray;
+        }
+        #buttonBox{
+            margin-left: 220px;
+            width: 85px;
+            height: 40px;
+            font-size: 1em;
+            color: white;
+            background-color: #3194db;
+            box-shadow: none;
+            border: none;
+            border-radius: 5px;
+        }
+        #buttonBox:hover{
+            background-color: #1f77b6;
+        }
+        #tableSet{
+            position: absolute;
+            left: 37%;
+            top: 83%;
+            font-size: .9em;
+            color: gray;
+        }
+        #textBox:focus{
+            color: black;
+            outline: none;
+        }
+        #emailHover:hover{
+            text-decoration: underline;
+        }
+        span:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <fieldset id='field'>
+        <img src="/icon/google.png" width="80px" style="margin-top: 40px;"/>
+        <p style="font-size: 1.5em;margin-top: 10px;">로그인</p>
+        <p style="margin-top: -15px;">Google 계정 사용</p><br/>
+        <input type="text" value="이메일 또는 휴대전화" id='textBox'/>
+        <p id="emailHover" style="text-align: left;text-indent: 35px;color: #288CD2;">이메일을 잊으셨나요?</p>
+        <br/><br/>
+        <p style="color: gray;text-align: left;text-indent: 35px;">내 컴퓨터가 아닌가요? 시크릿 브라우징 창을 사용하여<br/>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>로그인하세요. <span style="color: #288CD2;">자세히 알아보기</span></p>
+        <br/>
+        <p id="makeAccount" style="color: #288CD2;text-align: left;text-indent: 35px;">계정 만들기
+            <button id='buttonBox'>다음</button>
+        </p>
+    </fieldset>
+    <div>
+        <table id='tableSet'>
+            <td style="width: 53%;">한국어</td>
+            <td style="padding: 10px;">도움말</td>
+            <td style="padding: 10px;">개인정보 보호</td>
+            <td style="padding: 10px;">약관</td>
+        </table>
+    </div>
+</body>
+<script>
+    //로그인 클릭시
+    var loginDis = document.getElementById('textBox');
+    loginDis.addEventListener('click',clickText,false);
+    function clickText(){
+        textBox.value='';
+        textBox.style.border='#3194db solid 2px';
+    }
+    //다음버튼 클릭시
+    var buttonDis = document.getElementById('buttonBox');
+    buttonDis.addEventListener('click',clickButton,false);
+    function clickButton(){
+        if(loginDis.value.length=='0'){
+            textBox.style.border='red solid 2px';
+            alert('이메일 혹은 휴대전화를 입력해주세요.');
+        }
+    }
+</script>
+</html>
